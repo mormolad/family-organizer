@@ -1,15 +1,25 @@
 import './App.css';
 import React from 'react';
-import Cards from '../Cards/Cards.jsx';
+import Main from "../Main/Main.jsx"
 import Header from '../Header/Header';
 function App() {
+const addCard = ()=>{
+  console.log('add card')
+}
+const clearCards = ()=>{
+  console.log('clear card')
+}
+
+
   return (
     <div className="App">
       <Header />
-      <Cards />
+      <Main addCard={addCard} clearCards={clearCards}/>
+      
       {/* <Footer /> */}
     </div>
   );
 }
 
 export default App;
+

@@ -6,7 +6,7 @@ import saveButton from '../../images/save_button.svg';
 
 function Card({ title, key, onEdit, onDelete, onMove }) {
   const [isEditing, setIsEditing] = useState(false);
-  //   const [containerContent, setContainerContent] = useState(task.content);
+  const [containerContent, setContainerContent] = useState(title);
 
   const handleEdit = () => {
     if (isEditing) {
@@ -26,13 +26,13 @@ function Card({ title, key, onEdit, onDelete, onMove }) {
   return (
     <div key={key} className="card">
       {isEditing ? (
-        <textarea
+        <input
           className=""
           value={title}
-          //onChange={(e) => setContainerContent(e.target.value)}
+          onChange={(e) => setContainerContent(e.target.value)}
         />
       ) : (
-        <div className="card__title">{title}</div>
+        <div className="card__title">{containerContent}</div>
       )}
 
       {/* Кнопки редактирования, удаления и перемещения */}

@@ -1,4 +1,43 @@
+
 .header {
-  height: 80px;
-  background-color: #193045;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #2d2d2d;
+  border-bottom: 1px solid #A9D5DD;
+}
+
+.header__logo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+   height: 80px; /* замените на желаемую высоту */
+  width: 200px; /* замените на желаемую ширину*/
+  /*background-color: #fff;  замените на желаемый цвет фона*/
+}
+
+.header__logo img {
+  max-height: 100%; /* замените на желаемый процент высоты*/
+  max-width: 100%; /* замените на желаемый процент ширины*/
+}
+
+.header__nav {
+  flex: 1 1 auto;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.header__nav-link {
+  font-size: 16px;
+  padding: 10px;
+  text-decoration: none;
+  color: #bababa;
+}
+
+.header__nav-link:visited{
+  color: #bababa;
+} 
+
+.header__nav-link:hover {
+  color: #728688;
 }

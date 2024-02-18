@@ -1,60 +1,58 @@
 .card {
-  background-color: #333;
-  color: #fff;
+ 
+  color: rgb(#14A9FF);
   width: 300px;
-  padding: 20px;
+  height: min-content;
+  border: 2px solid #131313;
   border-radius: 8px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+   display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  grid-template-areas: 
+  'first' 'second' 'third';
 }
-
 .card__title {
-  font-weight: bold;
-  font-size: 20px;
-  margin-bottom: 10px;
+  word-wrap: break-word;
+  text-align: center;
+  font-size: 18px;
+  margin: 10px;
+  color: #85DCFF;
+}
+.card__buttons-conteiner {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
 }
 
 .card__content {
   font-size: 16px;
   line-height: 1.5;
-}
-
-.card__footer {
-  margin-top: 20px;
+  
 }
 
 .card__button {
-  background-color: #4caf50;
+  margin: 3px;
+  background-color: #000000;
   border: none;
-  color: white;
-  padding: 10px 15px;
   text-align: center;
   text-decoration: none;
   display: inline-block;
   font-size: 16px;
   border-radius: 4px;
   cursor: pointer;
-}
-
-/* .card__button {
-  display: flex;
-  justify-content: space-between;
-  width: 100%;
-  margin-bottom: 10px;
-} */
-.card__button-image {
-  height: 15px;
-  width: 15px;
-  border-radius: 5px;
-}
-.card__title {
-  text-align: center;
-  font-size: 18px;
-  margin-bottom: 20px;
-}
-.card__buttons-conteiner {
+  height: 30px;
+  width: 30px;
   display: flex;
   justify-content: center;
   align-items: center;
 }
+
+.card__button:hover {
+  background-color: #303030;
+}
+
+.card__button-image {
+  height: 20px;
+  width: 20px;
+  border-radius: 5px;
+}
+

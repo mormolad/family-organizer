@@ -1,11 +1,8 @@
 import React from 'react';
 import Card from '../Card/Card.jsx';
 import './Cards.css';
-const Cards = () => {
-  const cards = [
-    { title: 'первое задание', id: 111 },
-    { title: 'второе задание', id: 222 },
-  ];
+const Cards = ({cards, title}) => {
+
   const onEdit = () => {
     console.log('onEdit');
   };
@@ -17,6 +14,7 @@ const Cards = () => {
   };
   return (
     <div className="cards">
+      <h2 className='cards__title'>{title}</h2>
       {cards.map((card, i) => (
         <Card
           title={card.title}
