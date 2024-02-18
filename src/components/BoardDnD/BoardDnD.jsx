@@ -12,9 +12,19 @@ const BoardDnD = ({ addCard, clearCards }) => {
     { title: 'третье задание', id: 333, order: 4 },
     { title: 'четвёртое задание', id: 444, order: 1 },
     ])
-// карта которая захвачена для переноса
+  // карта которая захвачена для переноса
   const [currentCard, setCurrentCard] = useState(null)
-// функция вызывается когда мы отпускаем карту
+
+  // События, возникающие в перемещаемом объекте (исходный элемент):
+  // ondragstart – возникает, когда пользователь начинает перемещать элемент
+  // ondrag – возникает во время перемещения элемента
+  // ondragend - возникает, когда пользователь заканчивает перемещать элемент
+  
+  // События, возникающие в объекте-приемнике:
+  // ondragenter - возникает, когда перемещаемый элемент входит в принимающий объект
+  // ondragover - возникает, когда перемещаемый элемент проходит над принимающим объектом
+  // ondragleave - возникает, когда перемещаемый элемент покидает принимающий объект
+  // ondrop - возникает, когда пользователь отпускает перемещаемый элемент
   function dragEndHandler(e) {
     e.currentTarget.classList.remove('boardDnD__card_OverHandler')
     e.target.classList.remove('boardDnD__card_OverHandler')
@@ -44,7 +54,7 @@ const BoardDnD = ({ addCard, clearCards }) => {
     }))
     e.currentTarget.classList.remove('boardDnD__card_OverHandler')
   }
-
+  //функция сортировки применяемая для упорядочивания карт для отрисовки после перетпскивания
   const sortCard = (a, b) => {
     if (a.order > b.order) {
       return 1
@@ -54,8 +64,7 @@ const BoardDnD = ({ addCard, clearCards }) => {
   }
 
   return (<div className='boardDnD'>
-    {console.log(cardsList)}
-    {cardsList.sort(sortCard).map(card => <div className={`boardDnD__card `}
+    {cardsList.sort(sortCard).map(card => <div className={`boardDnD__card `} //сначала сортируем карты по порядку (order), затем перебираем массив для отрисовки карточек
       draggable={true}
       onDragEnd={(e) => dragEndHandler(e)}
       onDragLeave={(e) => dragEndHandler(e)}
@@ -67,7 +76,7 @@ const BoardDnD = ({ addCard, clearCards }) => {
   </div>)
 
 
-
+  //на потом!!!
   //   return (
   //     <div className="boardDnD">
   //       <div className="boardDnD__column boardDnD__column_left">
